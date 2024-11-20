@@ -31,11 +31,11 @@ h3 {
 body {
   font-family: "poppins", sans-serif;
   color: #101010;
-  background-color: #ffffff;
+  background-color: #c6e6ef;
 }
 
 .layout_padding {
-  padding: 75px 0;
+  padding: 20px 0;
 }
 
 .layout_padding2 {
@@ -75,7 +75,7 @@ body {
 /*header section*/
 .hero_area {
   height: 98vh;
-  background-image: url(../images/hero.jpg);
+  background-image: url(../images/fondo.jpg);
   background-size: cover;
   background-attachment: fixed;
 }
@@ -99,7 +99,7 @@ body {
 
 .custom_nav-container.navbar-expand-lg .navbar-nav .nav-link {
   padding: 10px 30px;
-  color: #ffffff;
+  color: #06305b;
   text-align: center;
   text-transform: uppercase;
 }
@@ -161,9 +161,9 @@ a:focus {
 }
 
 .navbar-brand span {
-  font-size: 24px;
+  font-size: 30px;
   font-weight: 700;
-  color: #ffffff;
+  color: #06305b;
   font-family: "Ethnocentric";
 }
 
@@ -191,7 +191,7 @@ a:focus {
 /*end header section*/
 .hero_section {
   text-align: center;
-  color: #ffffff;
+  color: #06305b;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -206,7 +206,8 @@ a:focus {
 }
 
 .hero_section h1 {
-  font-size: 85px;
+  font-weight: bold;
+  font-size: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -217,18 +218,26 @@ a:focus {
   margin: 0 auto;
 }
 
+.letras{
+  font-family: auto;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 25px;
+    color: #1c8cae;
+}
+
 .hero_section .hero_btn-box a {
   display: inline-block;
   padding: 12px 55px;
   background-color: transparent;
-  border: 1.5px solid #ffffff;
-  color: #ffffff;
+  border: 1.5px solid #06305b;
+  color: #06305b;
   margin-top: 55px;
   text-transform: uppercase;
 }
 
 .hero_section .hero_btn-box a:hover {
-  background-color: #ffffff;
+  background-color: #06305b;
   color: #00ff00;
 }
 
@@ -237,11 +246,12 @@ a:focus {
 }
 
 .about_section .about_container {
+  border-radius: 75px;
   width: 85%;
   margin-left: auto;
   margin-right: auto;
   padding: 75px 45px;
-  background-image: url(../images/about.jpg);
+  background-image: url(../images/vesti.jpeg);
   background-size: auto 100%;
   background-color: #fff;
   background-position: center;
@@ -267,16 +277,12 @@ a:focus {
 .about_section .detail a {
   display: inline-block;
   padding: 14px 35px;
-  background-color: transparent;
-  border: 1.5px solid #00ff00;
-  color: #00ff00;
-  color: #3cff3c;
+
   margin-top: 75%;
 }
 
 .about_section .detail a:hover {
-  background-color: #00ff00;
-  color: #ffffff;
+  color: #06305b;
 }
 
 .about_section .detail-2 {
@@ -323,13 +329,10 @@ a:focus {
   display: inline-block;
   padding: 14px 35px;
   background-color: transparent;
-  border: 1.5px solid #00ff00;
-  color: #00ff00;
-  color: #3cff3c;
+
 }
 
 .product_section a:hover {
-  background-color: #00ff00;
   color: #ffffff;
 }
 
@@ -346,22 +349,30 @@ a:focus {
   display: inline-block;
   padding: 14px 35px;
   background-color: transparent;
-  border: 1.5px solid #00ff00;
-  color: #00ff00;
-  color: #3cff3c;
+
 }
 
 .why_section a:hover {
-  background-color: #00ff00;
   color: #ffffff;
+}
+
+.invi{
+  width: 100%;
+}
+
+.dario{
+  border-radius: 100px;
 }
 
 .contact_section {
   color: #fff;
-  background: url(../images/contact-bg.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+}
+
+.h2{
+  font-family: "Ethnocentric";
 }
 
 .contact_section h2::before {
@@ -417,6 +428,7 @@ a:focus {
 }
 
 .client_section .client_container {
+  
   width: 90%;
   margin: 0 auto;
   display: -webkit-box;
@@ -441,26 +453,17 @@ a:focus {
   min-height: 225px;
   border-radius: 100%;
   background: -webkit-gradient(linear, left top, right top, from(#afad04), to(#5da802));
-  background: linear-gradient(to right, #afad04, #5da802);
+  background: linear-gradient(to right, #73e4e8, #73e4e8);
   margin-right: 15px;
 }
 
 .client_section .img_box img {
+  border-radius: 50px;
   width: 75%;
 }
 
-.client_section .detail_box {
-  padding: 25px;
-  background: -webkit-gradient(linear, left top, left bottom, from(#afad04), to(#5da802));
-  background: linear-gradient(to bottom, #afad04, #5da802);
-  color: #ffffff;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
+
+
 
 .client_section .detail_box h5 {
   font-weight: bold;
@@ -499,7 +502,7 @@ a:focus {
 }
 
 .info_section {
-  background-image: url(../images/info-bg.jpg);
+  background-image: url(../images/fondo.jpg);
   background-size: cover;
   background-attachment: fixed;
 }
