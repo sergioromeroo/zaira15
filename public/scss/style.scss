@@ -1,19 +1,21 @@
 /******* Bootstrap Theming ********/
 
-$primary: #009CFF;
-$secondary: #F3F6FF;
+$primary: #E47A2E;
+$secondary: #EDF5F7;
 $light: #FFFFFF;
-$dark: #22395d;
+$dark: #121F38;
 
 $font-family-sans-serif: 'Montserrat', sans-serif;
 
-$headings-font-family: 'Roboto', sans-serif;
+$headings-font-weight: 400;
 
 $body-bg: $light;
 
 $body-color: #818491;
 
 $headings-color: $dark;
+
+$headings-font-weight: 600;
 
 $enable-responsive-font-sizes: true;
 
@@ -25,12 +27,8 @@ $border-width: 2px;
 
 
 /********** Template CSS ************/
-h1, h2, h3 {
-    font-weight: 700 !important;
-}
-
-h4, h5, h6 {
-    font-weight: 500 !important;
+.font-secondary {
+    font-family: 'Great Vibes', cursive;
 }
 
 .btn-square {
@@ -106,7 +104,6 @@ h4, h5, h6 {
     color: $light;
     letter-spacing: 1px;
     text-transform: uppercase;
-    font-size: 14px;
     font-weight: 600;
     outline: none;
 }
@@ -133,46 +130,176 @@ h4, h5, h6 {
 
 .section-title {
     margin-bottom: 30px;
-    padding-bottom: 20px;
 }
 
 .section-title::before {
     position: absolute;
     content: "";
-    width: 150px;
+    width: 60px;
     height: 2px;
-    bottom: 12px;
-    left: calc(50% - 75px);
+    bottom: 11px;
+    left: calc(50% - 80px);
     background: $primary;
 }
 
 .section-title::after {
     position: absolute;
     content: "";
-    width: 120px;
+    width: 60px;
     height: 2px;
-    bottom: 8px;
-    left: calc(50% - 60px);
+    bottom: 11px;
+    right: calc(50% - 80px);
     background: $primary;
 }
 
-.product-img,
+.btn-play {
+    position: relative;
+    margin-top: 50px;
+    display: block;
+    box-sizing: content-box;
+    width: 16px;
+    height: 26px;
+    border-radius: 100%;
+    border: none;
+    outline: none !important;
+    padding: 18px 20px 20px 28px;
+    background: $light;
+}
+
+.btn-play:before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    width: 60px;
+    height: 60px;
+    background: $light;
+    border-radius: 100%;
+    animation: pulse-border 1500ms ease-out infinite;
+}
+
+.btn-play:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    width: 60px;
+    height: 60px;
+    background: $light;
+    border-radius: 100%;
+    transition: all 200ms;
+}
+
+.btn-play span {
+    display: block;
+    position: relative;
+    z-index: 3;
+    width: 0;
+    height: 0;
+    left: -1px;
+    border-left: 16px solid $primary;
+    border-top: 11px solid transparent;
+    border-bottom: 11px solid transparent;
+}
+
+@keyframes pulse-border {
+    0% {
+        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(2);
+        opacity: 0;
+    }
+}
+
+#videoModal .modal-dialog {
+    position: relative;
+    max-width: 800px;
+    margin: 60px auto 0 auto;
+}
+
+#videoModal .modal-body {
+    position: relative;
+    padding: 0px;
+}
+
+#videoModal .close {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 0px;
+    top: -30px;
+    z-index: 999;
+    font-size: 30px;
+    font-weight: normal;
+    color: #ffffff;
+    background: #000000;
+    opacity: 1;
+}
+
+.timeline .row {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+@media (min-width: 768px) {
+    .timeline::after {
+        position: absolute;
+        content: "";
+        width: 2px;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -1px;
+        background: $primary;
+    }
+    
+    .timeline .row::before {
+        content: "";
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        top: calc(50% - 15px);
+        left: calc(50% - 15px);
+        background: $light;
+        border: 2px solid $primary;
+        transform: rotate(45deg);
+        z-index: 1;
+    }
+    
+    .timeline .row::after {
+        content: "\f004";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 400;
+        position: absolute;
+        top: calc(50% - 10px);
+        left: calc(50% - 8px);
+        color: $primary;
+        z-index: 2;
+    }
+}
+
 .gallery-item {
     position: relative;
     overflow: hidden;
 }
 
-.product-img img,
 .gallery-item img {
     transition: .5s;
 }
 
-.product-item:hover img,
 .gallery-item:hover img {
     transform: scale(1.2);
 }
 
-.product-img a,
 .gallery-item a {
     position: absolute;
     width: 60px;
@@ -188,18 +315,16 @@ h4, h5, h6 {
     opacity: 0;
 }
 
-.product-item:hover a,
 .gallery-item:hover a {
     opacity: 1;
 }
 
 .bg-gallery {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/gallery.jpg), no-repeat center center;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/gallery.jpg), no-repeat center center;
     background-size: cover;
 }
 
-.gallery-carousel .owl-nav,
-.testimonial-carousel .owl-nav {
+.gallery-carousel .owl-nav {
     position: absolute;
     width: 135px;
     height: 60px;
@@ -212,9 +337,7 @@ h4, h5, h6 {
 }
 
 .gallery-carousel .owl-nav .owl-prev,
-.gallery-carousel .owl-nav .owl-next,
-.testimonial-carousel .owl-nav .owl-prev,
-.testimonial-carousel .owl-nav .owl-next {
+.gallery-carousel .owl-nav .owl-next {
     width: 60px;
     height: 60px;
     display: flex;
@@ -225,14 +348,8 @@ h4, h5, h6 {
     font-size: 30px;
 }
 
-.testimonial-carousel .owl-nav .owl-prev,
-.testimonial-carousel .owl-nav .owl-next {
-    color: $light;
-    background: $primary;
-}
-
-.contact-form .help-block ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
+@media (max-width: 767.98px) {
+    #event .border-right {
+        border-right: none !important;
+    }
 }
